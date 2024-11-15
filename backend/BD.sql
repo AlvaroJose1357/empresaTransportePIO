@@ -27,7 +27,7 @@ create table usuario (
 	password varchar(200),
 	idrol serial,
 	foreign key (idrol) references rol(idrol)
-)
+);
 
 create table pedido (
 	idpedido serial primary key,
