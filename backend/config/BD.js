@@ -3,7 +3,7 @@ const { Pool } = pkg;
 
 import { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from "./entorno.js";
 
-const pool = new Pool({
+export const pool = new Pool({
   user: DB_USER,
   host: DB_HOST,
   database: DB_NAME,
@@ -11,7 +11,7 @@ const pool = new Pool({
   port: DB_PORT,
 });
 
-const connectBD = async () => {
+export const connectBD = async () => {
   try {
     await pool.connect();
     console.log("conectado a postgreSQL");
@@ -19,5 +19,3 @@ const connectBD = async () => {
     console.error("Error al conectarse a postgre", error);
   }
 };
-
-export default connectBD;
