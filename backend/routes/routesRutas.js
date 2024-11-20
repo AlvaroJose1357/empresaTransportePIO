@@ -4,11 +4,11 @@ const router = Router();
 //* login
 //* register
 //* logout
-const respuesta = (req, res) => {
+const response = (req, res) => {
   res.status(200).json({ mensaje: "ok" });
 };
-router.post("/login", respuesta);
-router.post("/register", respuesta);
-router.post("/logout", respuesta);
+router.post("/login", response);
+router.post("/register", response);
+router.post("/logout", response);
 
 export default router;

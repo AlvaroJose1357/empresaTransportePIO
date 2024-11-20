@@ -14,31 +14,31 @@
 import { Router } from "express";
 import {
   orderManagement,
-  assignmentOrder,
-  routesOptimization,
+  orderAssignment,
+  optimizationRoutes,
   monitoringPanel,
-  administratorDriver,
+  driverAdministrator,
   addDriver,
 } from "../controllers/controllerAdmin.js";
 const router = Router();
 
-const respuesta = (req, res) => {
+const response = (req, res) => {
   res.status(200).json({ mensaje: "ok" });
 };
-// administradores
+// administrators
 router.get("/orderManagement", orderManagement);
-router.post("/orderManagement/assignmentOrder", assignmentOrder);
-router.get("/routesOptimization", routesOptimization);
+router.post("/orderManagement/orderAssignment",  orderAssignment);
+router.get("/optimizationRoutes", optimizationRoutes);
 router.get("/monitoringPanel", monitoringPanel);
-router.get("/administratorDriver", administratorDriver);
+router.get("/driverAdministrator", driverAdministrator);
 router.post("/administratorDriver/addDriver", addDriver);
 
-// conductores
-router.post("/deliveryList", respuesta);
-router.post("/messagingAdmin", respuesta);
+// drivers
+router.post("/deliveryList", response);
+router.post("/messagingAdmin", response);
 
-// clientes
-router.post("/orderTracking", respuesta);
-router.post("/orderHistory", respuesta);
+// clients
+router.post("/orderTracking", response);
+router.post("/orderHistory", response);
 
 export default router;
