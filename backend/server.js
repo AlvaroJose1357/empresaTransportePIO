@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectBD from "./config/BD.js";
+import { connectBD } from "./config/BD.js";
 import routerUsers from "./routes/routesUser.js";
 import routerAuth from "./routes/routesAuth.js";
 import routerRoutes from "./routes/routesRutas.js";
