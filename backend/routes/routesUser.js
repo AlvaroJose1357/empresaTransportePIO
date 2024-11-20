@@ -12,22 +12,32 @@
 //* historial de pedidos referentes al usuario
 
 import { Router } from "express";
+import {
+  orderManagement,
+  assignmentOrder,
+  routesOptimization,
+  monitoringPanel,
+  administratorDriver,
+  addDriver,
+} from "../controllers/controllerAdmin.js";
 const router = Router();
 
 const respuesta = (req, res) => {
   res.status(200).json({ mensaje: "ok" });
 };
 // administradores
-router.post("/orderManagement", respuesta);
-router.post("/routesOptimization", respuesta);
-router.post("/monitoringPanel", respuesta);
+router.get("/orderManagement", orderManagement);
+router.post("/orderManagement/assignmentOrder", assignmentOrder);
+router.get("/routesOptimization", routesOptimization);
+router.get("/monitoringPanel", monitoringPanel);
+router.get("/administratorDriver", administratorDriver);
+router.post("/administratorDriver/addDriver", addDriver);
 
 // conductores
 router.post("/deliveryList", respuesta);
 router.post("/messagingAdmin", respuesta);
 
 // clientes
-
 router.post("/orderTracking", respuesta);
 router.post("/orderHistory", respuesta);
 
