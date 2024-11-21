@@ -6,7 +6,7 @@ pool
     console.log("conectado a postgreSQL");
   })
   .catch((err) => {
-    console.error("Error al conectarse a postgre", err);
+    console.error("Error al conectarse a postgres", err);
   });
 
 pool.query("SELECT NOW()", (err, res) => {

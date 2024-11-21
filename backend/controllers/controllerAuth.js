@@ -10,7 +10,7 @@ export const register = async (req, res) => {
     telefonousuario,
     correousuario,
     password,
-    (idrol = 2),    ,
+    idrol,
   } = req.body;
   try {
     // encriptar password
