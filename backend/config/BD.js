@@ -16,6 +16,6 @@ export const connectBD = async () => {
     await pool.connect();
     console.log("conectado a postgreSQL");
   } catch (error) {
-    console.error("Error al conectarse a postgre", error);
+    console.error("Error al conectarse a postgres", error);
   }
 };

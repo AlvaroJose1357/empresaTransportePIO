@@ -20,6 +20,8 @@ import {
   driverAdministrator,
   addDriver,
 } from "../controllers/controllerAdmin.js";
+
+import {supplierOrder} from "../controllers/controllerSupplier.js" 
 const router = Router();
 
 const response = (req, res) => {
@@ -40,5 +42,8 @@ router.post("/messagingAdmin", response);
 // clients
 router.post("/orderTracking", response);
 router.post("/orderHistory", response);
+
+//supplier
+router.post("/supplierOrder", supplierOrder);
 
 export default router;
