@@ -29,21 +29,26 @@ create table usuario (
 	foreign key (idrol) references rol(idrol)
 );
 
+CREATE TABLE orden (
+  idorden serial NOT NULL primary key,
+	origen varchar(50),
+	destino varchar(50),
+  detalles varchar(200),
+  nombredestinatario character varying(100)
+);
+
 create table pedido (
 	idpedido serial primary key,
 	idusuarioconductor serial,
-	idusuariocliente serial,
+	idorden serial
 	fechaentrega date,
 	fechasalida date,
-	origen varchar(50),
-	destino varchar(50),
 	costo float,
 	idestadopedido serial,
 	fechacreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	detalles varchar(200),
 	idrutas serial,
 	foreign key (idusuarioconductor) references usuario(idusuario),
-	foreign key (idusuariocliente) references usuario(idusuario),
+	foreign key (idorden) references orden(idorden),
 	foreign key (idestadopedido) references estadopedido(idestadopedido),
 	foreign key (idrutas) references rutas(idrutas)
 );
