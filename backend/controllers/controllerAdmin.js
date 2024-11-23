@@ -1,9 +1,7 @@
 export const orderManagement = (req, res) => {
   res.send("orderManagement");
 };
-export const orderAssignment  = (req, res) => {
-  res.send("orderAssignment");
-};
+export const orderAssignment = (req, res) => {};
 export const optimizationRoutes = (req, res) => {
   res.send("optimizationRoutes");
 };

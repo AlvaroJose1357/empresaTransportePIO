@@ -15,6 +15,9 @@ export const register = async (req, res) => {
   try {
     // encriptar password
     const hashedPassword = await bcrypt.hash(password, 10);
+    if (!nombreusuario || !apellidousuario || !correousuario || !password) {
+      return res.status(400).json({ message: "Faltan campos obligatorios" });
+    }
     const newUser = await pool.query(
       "INSERT INTO usuario (nombreusuario, apellidousuario, edadusuario, telefonousuario, correousuario, password, idrol) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
