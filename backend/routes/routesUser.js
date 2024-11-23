@@ -21,7 +21,11 @@ import {
   addDriver,
 } from "../controllers/controllerAdmin.js";
 
-import {supplierOrder} from "../controllers/controllerSupplier.js" 
+import { supplierOrder } from "../controllers/controllerSupplier.js";
+import {
+  orderTracking,
+  orderHistory,
+} from "../controllers/controllerClient.js";
 const router = Router();
 
 const response = (req, res) => {
@@ -29,7 +33,7 @@ const response = (req, res) => {
 };
 // administrators
 router.get("/orderManagement", orderManagement);
-router.post("/orderManagement/orderAssignment",  orderAssignment);
+router.post("/orderManagement/orderAssignment", orderAssignment);
 router.get("/optimizationRoutes", optimizationRoutes);
 router.get("/monitoringPanel", monitoringPanel);
 router.get("/driverAdministrator", driverAdministrator);
@@ -40,8 +44,8 @@ router.post("/deliveryList", response);
 router.post("/messagingAdmin", response);
 
 // clients
-router.post("/orderTracking", response);
-router.post("/orderHistory", response);
+router.post("/orderTracking", orderTracking);
+router.get("/orderHistory", orderHistory);
 
 //supplier
 router.post("/supplierOrder", supplierOrder);

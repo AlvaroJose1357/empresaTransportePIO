@@ -1,9 +1,3 @@
-create table rutas (
-	idrutas SERIAL PRIMARY KEY,
-	estado varchar(30),
-	tiempoestimado int
-);
-
 create table estadopedido (
 	idestadopedido SERIAL PRIMARY KEY,
 	nombreestadopedido varchar(20) NOT NULL,
